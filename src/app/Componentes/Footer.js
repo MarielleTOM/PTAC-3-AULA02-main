@@ -1,23 +1,18 @@
 import Link from "next/link";
-import Styles from "./menu.module.css";
 import Imagem from "next/image";
+import Styles from "./footer.module.css";
 
 export default function Footer(){
     return(
-        <footer>
+        <footer className={Styles.footer}>
+            <nav>
+                <Link href= "https://ead.ifms.edu.br/">
             <Imagem 
+                className="img"
                 width={100}
                 height={100}
-                src={"https://ead.ifms.edu.br/theme/moove/pix/moodle-logo-white.png"} />
-            <nav>
-                <ul>
-                    <Link href="/">
-                    <li>Home</li>
-                    </Link>
-                    <Link href="/registro">
-                    <li>Registar</li>
-                    </Link>
-                </ul>
+                src={"https://moodle.org/theme/moodleorg/pix/moodle_logo_TM.svg"} />
+                </Link>
             </nav>
         </footer>
     )
