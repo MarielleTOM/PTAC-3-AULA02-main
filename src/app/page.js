@@ -1,18 +1,21 @@
-const url = "http://localhost:3000/api";
+const url = "https://back-end-ifms-xi.vercel.app/campus";
 
 export default async function Home() {
 
   const resposta = await fetch(url,{
-    method:"GET"
+    next:{
+      revalidate: 1 
+    }
+
   });
-  const campus = await resposta.json();
+  const campi = await resposta.json();
  
   return (
-    <main className={Styles.mains}>
+    <main>
       <h1>Home</h1>
-      {campus.map((campi) =>
+      {campi.map((campus) =>
         <div>
-             <p>{campi.nome_campi}</p>
+             <p>{campus.nome_campus}</p>
         </div>
       )}
     </main>
